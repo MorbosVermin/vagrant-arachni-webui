@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+RUNUSER=vagrant
+INSTALLDIR=/home/vagrant/Downloads/arachni-1.4-0.5.10
+PID=`ps -C ruby -o pid=`
+
+if [ ! -z "${PID}" ]; then
+	echo -n "Stopping Arachni WebUI (pid=${PID}), please wait..."
+	sudo kill -9 ${PID}
+	[ $? -eq 0 ] && echo "ok." || echo "failed."
+else
+	echo "Arachni WebUI not running."
+fi
+
+

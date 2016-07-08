@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+RUNUSER=vagrant
+INSTALLDIR=/home/vagrant/Downloads/arachni-1.4-0.5.10
+
+echo -n "Starting Arachni WebUI, please wait..."
+${INSTALLDIR}/bin/arachni_web -D -o 10.0.2.15 -q
+[ $? -eq 0 ] && echo "ok." || echo "failed."
